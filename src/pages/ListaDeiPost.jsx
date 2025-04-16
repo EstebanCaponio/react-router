@@ -1,7 +1,10 @@
+import NavBar from "../components/NavBar";
+
 export default function ListaDeiPost() {
     return (
         <>
-            <div>ListaDeiPost</div>
+            <h1>LISTA PRODOTTI</h1>
+            <NavBar />
         </>
     )
 }

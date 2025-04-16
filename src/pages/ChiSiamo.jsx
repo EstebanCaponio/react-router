@@ -1,7 +1,10 @@
+import NavBar from "../components/NavBar";
+
 export default function ChiSiamo() {
     return (
         <>
-            <div>ChiSiamo</div>
+            <h1>CHI SIAMO</h1>
+            <NavBar />
         </>
     )
 }
