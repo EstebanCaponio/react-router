@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 
 export default function SinglePost() {
     const { id } = useParams();
+
     const navigate = useNavigate();
 
     const [post, setPost] = useState(null);
@@ -15,12 +16,12 @@ export default function SinglePost() {
             .then(res => {
                 setPost(res.data);
                 setLoading(false);
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch(err => console.log(err))
     }
 
-    useEffect(searchPostId, []);
+    useEffect(searchPostId, [id]);
 
     if (loading) {
         return <div>caricamento...</div>
@@ -29,9 +30,10 @@ export default function SinglePost() {
     return (
         <>
             <h2>id prodotto: {id}</h2>
-            {/* <h3>{title}</h3>
-            <p>{body}</p> */}
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
             <button onClick={() => navigate(-1)}>INDIETRO</button>
+            <button onClick={() => navigate(`/blog/${parseInt(id) + 1}`)}>avanti</button>
         </>
     )
 }
