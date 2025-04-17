@@ -1,14 +1,18 @@
 import axios from "axios";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function ListaDeiPost() {
 
     const [posts, setPosts] = useState([]);
 
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(res => {
-            setPosts(res.data)
-        })
+    function getPosts() {
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(res => {
+                setPosts(res.data)
+            })
+    };
+
+    useEffect(getPosts, []);
 
     return (
         <>
