@@ -160,3 +160,131 @@ nav li a.active {
         flex-basis: calc(100% - 5px);
     }
 }
+
+/* -------------------- */
+
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 80px;
+}
+
+/* Nuove classi per la card */
+.blog-post-card {
+    background-color: rgba(41, 58, 75, 0.8);
+    color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(25% - 15px);
+    margin-bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.blog-post-card:hover {
+    /* transform: translateY(-5px); */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post-card-title a {
+    text-decoration: none;
+    color: #54c6f3;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.post-card-text {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.post-card-separator {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.post-card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.post-card-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+}
+
+.post-card-actions .btn-prev {
+    background-color: #b62222;
+    /* Blu per il bottone "INDIETRO" */
+}
+
+.post-card-actions .btn-next {
+    background-color: #28a745;
+    /* Verde per il bottone "AVANTI" */
+}
+
+.post-card-actions button:disabled {
+    background-color: #6c757d;
+    /* Grigio disabilitato */
+    cursor: not-allowed;
+}
+
+.loading {
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Media queries (invariate, ma le classi all'interno sono state aggiornate) */
+@media (min-width: 1200px) {
+    .posts-grid {
+        padding: 80px;
+    }
+
+    .blog-post-card {
+        flex-basis: calc(25% - 15px);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 993px) {
+    .blog-post-card {
+        flex-basis: calc(33.333% - 13.333px);
+    }
+}
+
+@media (max-width: 992px) {
+    .blog-post-card {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-post-card {
+        flex-basis: calc(100% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .posts-grid {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .blog-post-card {
+        padding: 15px;
+        flex-basis: calc(100% - 5px);
+    }
+}

@@ -96,7 +96,7 @@ export default function SinglePost() {
     }, [currentId, post]);
 
     if (loading) {
-        return <div>caricamento...</div>
+        return <div className="loading">caricamento...</div>
     }
 
     if (!post) {
@@ -105,17 +105,21 @@ export default function SinglePost() {
 
     return (
         <>
-            <h2>id prodotto: {id}</h2>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-            <button
-                onClick={() => navigate(`/blog/${currentId - 1}`)}
-                disabled={currentId <= 1}>INDIETRO
-            </button>
-            <button
-                onClick={() => navigate(`/blog/${currentId + 1}`)}
-                disabled={!hasNextPost}>AVANTI
-            </button>
+            <div class="blog-post-card">
+                <h3 class="post-card-title">{post.title}</h3>
+                <div class="post-card-body">
+                    <p class="post-card-text">{post.body}</p>
+                    <hr class="post-card-separator" />
+                </div>
+                <div class="post-card-actions">
+                    <button class="btn-prev" onClick={() => navigate(`/blog/${currentId - 1}`)} disabled={currentId <= 1}>
+                        INDIETRO
+                    </button>
+                    <button class="btn-next" onClick={() => navigate(`/blog/${currentId + 1}`)} disabled={!hasNextPost}>
+                        AVANTI
+                    </button>
+                </div>
+            </div>
         </>
     )
 }
