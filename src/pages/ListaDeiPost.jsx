@@ -17,11 +17,9 @@ export default function ListaDeiPost() {
 
     return (
         <>
-            <h1>LISTA PRODOTTI</h1>
-
-            <div>
+            <div className="posts-grid">
                 {posts.map(post =>
-                    <div key={post.id}>
+                    <div key={post.id} className="post-container">
                         <h3><Link to={`/blog/${post.id}`}>{post.title}</Link></h3>
                         <p>{post.body}</p>
                         <hr />
