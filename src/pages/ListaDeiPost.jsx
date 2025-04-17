@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function ListaDeiPost() {
 
@@ -21,7 +22,7 @@ export default function ListaDeiPost() {
             <div>
                 {posts.map(post =>
                     <div key={post.id}>
-                        <h3>{post.title}</h3>
+                        <h3><Link to={`/blog/${post.id}`}>{post.title}</Link></h3>
                         <p>{post.body}</p>
                         <hr />
                     </div>)}
